@@ -72,13 +72,12 @@ class SyllabeInitiale:
                 #Consonantisme complexe
                 if syllabes[0][1] in listes_lettres['consonnes_et_semi_consonnes']:
                     #Consonantisme explosif complexe
-                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
-                    if syllabes[0][1] == 'L':
-                        changements.append('bl')
-                    elif syllabes[0][1] == 'R':
-                        changements.append('br')
-                    elif syllabes[0][1] == 'Y':
+                    if syllabes[0][1] == 'Y':
                         changements.append('g')
+                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
+                    #Nous avons préféré généraliser la règle à toutes les consonnes ou semi consonnes sauf Y
+                    else:
+                        changements.append(syllabes[0][0] + syllabes[0][1])
                 #Consonantisme simple
                 else:
                     changements.append(syllabes[0][0])
@@ -90,11 +89,6 @@ class SyllabeInitiale:
                     #Consonantisme explosif complexe
                     if syllabes[0][1] == 'H':
                         changements.append('ch')
-                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
-                    elif syllabes[0][1] == 'L':
-                        changements.append('cl')
-                    elif syllabes[0][1] == 'R':
-                        changements.append('cr')
                     elif syllabes[0][1] == 'Y':
                         if syllabes[0][2] == 'O':
                             changements.append('ç')
@@ -102,6 +96,9 @@ class SyllabeInitiale:
                             changements.append('c')
                     elif syllabes[0][1] == 'W':
                         changements.append('c')
+                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
+                    else:
+                        changements.append(syllabes[0][0] + syllabes[0][1])
                 #Consonantisme simple
                 else:
                     #Palatalisation de C devant A
@@ -115,10 +112,7 @@ class SyllabeInitiale:
                 #Consonantisme complexe
                 if syllabes[0][1] in listes_lettres['consonnes_et_semi_consonnes']:
                     #Consonantisme explosif complexe
-                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
-                    if syllabes[0][1] == 'R':
-                        changements.append('dr')
-                    elif syllabes[0][1] == 'Y':
+                    if syllabes[0][1] == 'Y':
                         #Attaque
                         if syllabes[0][2] in ['E', 'Ọ', 'Ǫ', 'Ú', 'O']:
                             changements.append('j')
@@ -128,6 +122,9 @@ class SyllabeInitiale:
                             changements.append('g')
                     elif syllabes[0][1] == 'W':
                         changements.append('d')
+                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
+                    else:
+                        changements.append(syllabes[0][0] + syllabes[0][1])
                 #Consonantisme simple
                 else:
                     changements.append(syllabes[0][0])
@@ -138,10 +135,7 @@ class SyllabeInitiale:
                 if syllabes[0][1] in listes_lettres['consonnes_et_semi_consonnes']:
                     #Consonantisme explosif complexe
                     #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
-                    if syllabes[0][1] == 'L':
-                        changements.append('fl')
-                    elif syllabes[0][1] == 'R':
-                        changements.append('fr')
+                    changements.append(syllabes[0][0] + syllabes[0][1])
                 #Consonantisme simple
                 else:
                     changements.append(syllabes[0][0])
@@ -151,18 +145,16 @@ class SyllabeInitiale:
                 #Consonantisme complexe
                 if syllabes[0][1] in listes_lettres['consonnes_et_semi_consonnes']:
                     #Consonantisme explosif complexe
-                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
-                    if syllabes[0][1] == 'L':
-                        changements.append('gl')
-                    elif syllabes[0][1] == 'R':
-                        changements.append('gr')
-                    elif syllabes[0][1] == 'Y':
+                    if syllabes[0][1] == 'Y':
                         if syllabes[0][2] == 'Ǫ':
                             changements.append('ge')
                         else:
                             changements.append('g')
                     elif syllabes[0][1] == 'W':
                         changements.append('g')
+                    #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
+                    else:
+                        changements.append(syllabes[0][0] + syllabes[0][1])
                 else:
                     #Palatalisation de G devant A (graphie en j)
                     if syllabes[0][1] in ['A', 'Á']:
@@ -218,16 +210,12 @@ class SyllabeInitiale:
             #Gestion de P
             elif syllabes[0][0] == 'P':
                 if syllabes[0][1] in listes_lettres['consonnes_et_semi_consonnes']:
-                    #En position intiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
-                    if syllabes[0][1] == 'L':
-                        changements.append('pl')
-                    elif syllabes[0][1] == 'R':
-                        changements.append('pr')
                     #L'occlusive sourde labiale se singularise
-                    elif syllabes[0][1] == 'Y':
+                    if syllabes[0][1] == 'Y':
                         changements.append('ch')
+                    #En position intiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
                     else:
-                        changements.append(syllabes[0][0])
+                        changements.append(syllabes[0][0] + syllabes[0][1])
                 else:
                     changements.append(syllabes[0][0])
 
@@ -281,11 +269,8 @@ class SyllabeInitiale:
             #Gestion de T
             elif syllabes[0][0] == 'T':
                 if syllabes[0][1] in listes_lettres['consonnes_et_semi_consonnes']:
-                    #En position intiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
-                    if syllabes[0][1] == 'R':
-                        changements.append('tr')
                     #Les éléments en wau perdent généralement leur semi-voyelle
-                    elif syllabes[0][1] == 'W':
+                    if syllabes[0][1] == 'W':
                         changements.append(syllabes[0][0])
                     #La palatale se combine avec le yod pour se stabiliser dans une zone un peu plus avancée que celle de sa sononre correspondante
                     elif syllabes[0][1] == 'Y':
@@ -293,8 +278,9 @@ class SyllabeInitiale:
                             changements.append('ç')
                         else:
                             changements.append('c')
+                    #En position intiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
                     else:
-                        changements.append(syllabes[0][0])
+                        changements.append(syllabes[0][0] + syllabes[0][1])
                 else:
                     changements.append(syllabes[0][0])
 
@@ -309,6 +295,8 @@ class SyllabeInitiale:
                 else:
                     if syllabes[0][1] == 'A':
                         if len(syllabes[0]) > 2 and syllabes[0][2] in ['D', 'L', 'S']:
+                            changements.append('v')
+                        elif len(syllabes) > 1 and syllabes[1][0] == 'D':
                             changements.append('v')
                         else:
                             changements.append('g')
@@ -383,7 +371,7 @@ class SyllabeInitiale:
                     changements.append('e')
                 elif len(syllabes) > 2 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] + syllabes[2][0] == 'BRC':
                     changements.append('o')
-                #Fermeture due é la séquence CW
+                #Fermeture due à la séquence CW
                 elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] == 'CW':
                     if len(syllabes) > 2 and syllabes[2][0] + syllabes[2][1] == 'SS':
                         changements.append('eu')
@@ -395,7 +383,7 @@ class SyllabeInitiale:
             elif syllabes[0][-2] == 'A':
                 #Diphtongue AU
                 if syllabes[0][-1] == 'U':
-                    if len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] == 'DY':
+                    if len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] == 'DY':
                         changements.append('oi')
                     elif len(syllabes) > 1 and len(syllabes[1]) > 2 and syllabes[1][0] + syllabes[1][1] + syllabes[1][2] == 'DWĪ':
                         changements.append('oi')
@@ -487,7 +475,10 @@ class SyllabeInitiale:
         elif 'O' in syllabes[0]:
             #Cas où la longueur syllabique est d'une lettre
             if len(syllabes[0]) == 1:
-                changements.append('o')
+                if len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] == 'CL':
+                    changements.append('e')
+                else:
+                    changements.append('o')
             #Si O se trouve en position ouvert
             elif syllabes[0][-1] == 'O':
                 #Fermeture due à la séquence TW
@@ -569,8 +560,6 @@ class SyllabeInitiale:
                     changements.append('ai')
                 elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['RY']:
                     changements.append('ie')
-                elif len(syllabes) > 1 and syllabes[1][0] == 'C':
-                    changements.append('a')
                 elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] == 'BW':
                     changements.append('o')
                 else:
@@ -626,9 +615,9 @@ class SyllabeInitiale:
                 #Anaphonie
                 elif len(syllabes) > 1 and syllabes[1][0] == 'Y':
                     changements.append('i')
-                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['BR', 'BY', 'VY', 'DY', 'GY', 'GI', 'GÍ', 'GĘ', 'GE', 'GA', 'GÁ']:
+                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['BY', 'CY', 'DY', 'FY', 'GY', 'LY', 'RY', 'TY', 'VY']:
                     changements.append('i')
-                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['CY', 'FY', 'LY', 'TY', 'RY', 'GN']:
+                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['BR', 'GA', 'GÁ', 'GĘ', 'GE', 'GI', 'GÍ', 'GN']:
                     changements.append('i')
                 else:
                     changements.append('ei')
@@ -660,15 +649,9 @@ class SyllabeInitiale:
                         changements.append('ui')
                     else:
                         changements.append('eu')
-                #Métaphoniei
-                elif len(syllabes) > 1 and syllabes[1][-1] == 'Ī':
+                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['BY', 'CY', 'DY', 'FY', 'GY', 'LY', 'RY', 'TY', 'VY']:
                     changements.append('i')
-                #Anaphonie
-                elif len(syllabes) > 1 and syllabes[1][0] == 'Y':
-                    changements.append('i')
-                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['BY', 'VY', 'DY', 'GY', 'GI', 'GÍ', 'GĘ', 'GA', 'GÁ']:
-                    changements.append('i')
-                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['CY', 'FY', 'LY', 'TY', 'RY', 'GN']:
+                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['GA', 'GÁ', 'GĘ', 'GE', 'GI', 'GÍ', 'GN']:
                     changements.append('i')
                 #Sous l'influence d'une palatale antécédente, la diphtongue ei ferme son premier élément
                 elif syllabes[0][-2] == 'C':
@@ -676,6 +659,12 @@ class SyllabeInitiale:
                         changements.append('ei')
                     else:
                         changements.append('i')
+                    #Métaphonie
+                elif len(syllabes) > 1 and syllabes[1][-1] == 'Ī':
+                    changements.append('i')
+                    #Anaphonie
+                elif len(syllabes) > 1 and syllabes[1][0] == 'Y':
+                    changements.append('i')
                 else:
                     changements.append('ei')
             #Si E fermé se trouve en position fermée
@@ -746,7 +735,7 @@ class SyllabeInitiale:
         elif 'Ę' in syllabes[0]:
             #Cas ou la longueur syllabique est d'une lettre
             if len(syllabes[0]) == 1:
-                if len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['CT']:
+                if len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['CT', 'BY', 'SY', 'TY']:
                     changements.append('i')
                 elif len(syllabes) > 1 and syllabes[1][0] == 'X':
                     changements.append('i')
@@ -761,16 +750,16 @@ class SyllabeInitiale:
             #Si E ouvert se trouve en position finale
             elif syllabes[0][-1] == 'Ę':
                 #Contact avec un groupe dégageat un yod
-                if len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['CT', 'TY']:
+                if len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['CT', 'BY', 'SY', 'TY']:
                     changements.append('i')
                 elif len(syllabes) > 1 and syllabes[1][0] == 'X':
                     changements.append('i')
                 elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['TW']:
                     changements.append('ui')
-                elif len(syllabes) > 1 and syllabes[1][-1] == 'Ī':
-                    changements.append('i')
                 elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['CW']:
                     changements.append('iu')
+                elif len(syllabes) > 1 and syllabes[1][-1] == 'Ī':
+                    changements.append('i')
                 else:
                     changements.append('ie')
             #Si E ouvert se trouve en position pénultième
@@ -807,6 +796,8 @@ class SyllabeInitiale:
                 #Fermeture de I face à O
                 if len(syllabes) > 1 and syllabes[1][0] == 'O':
                     changements.append('iu')
+                elif len(syllabes) == 2 and syllabes[1][0] + syllabes[1][1] == 'NE':
+                    changements.append('a')
                 else:
                     changements.append('i')
             #Si I tonique se trouve en position pénultième
@@ -831,9 +822,9 @@ class SyllabeInitiale:
                 #Anaphonie
                 elif len(syllabes) > 1 and syllabes[1][0] == 'Y':
                     changements.append('u')
-                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['BY', 'VY', 'DY', 'GY', 'GI', 'GÍ', 'GĘ', 'GE', 'GA', 'GÁ']:
+                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['BY', 'CY', 'DY', 'FY', 'GY', 'LY', 'RY', 'TY', 'VY']:
                     changements.append('u')
-                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['CY', 'FY', 'LY', 'TY', 'RY', 'GN']:
+                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['GA', 'GÁ', 'GĘ', 'GE', 'GI', 'GÍ', 'GN']:
                     changements.append('u')
                 else:
                     changements.append('ou')
@@ -843,9 +834,7 @@ class SyllabeInitiale:
                 if len(syllabes) > 1 and syllabes[1][0] in ['M', 'N']:
                     changements.append('o')
                 #Action fermante de la palatale sourde devant I et E
-                elif len(syllabes) > 1 and syllabes[1][0] == 'C' and syllabes[1][1] in ['I', 'E']:
-                    changements.append('oi')
-                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] == 'GN':
+                elif len(syllabes) > 1 and syllabes[1][0] + syllabes[1][1] in ['CI', 'CE', 'GN']:
                     changements.append('oi')
                 #Métaphonie
                 elif len(syllabes) > 1 and syllabes[1][-1] == 'Ī':
@@ -853,9 +842,9 @@ class SyllabeInitiale:
                 #Anaphonie
                 elif len(syllabes) > 1 and syllabes[1][0] == 'Y':
                     changements.append('u')
-                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['BY', 'VY', 'DY', 'GY', 'GI', 'GÍ', 'GĘ', 'GE', 'GÁ']:
+                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['BY', 'CY', 'DY', 'FY', 'GY', 'LY', 'RY', 'TY', 'VY']:
                     changements.append('u')
-                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['CY', 'FY', 'LY', 'TY', 'RY', 'GN']:
+                elif len(syllabes) > 1 and len(syllabes[1]) > 1 and syllabes[1][0] + syllabes[1][1] in ['GÁ', 'GĘ', 'GE', 'GI', 'GÍ', 'GN']:
                     changements.append('u')
                 else:
                     changements.append('ou')
@@ -997,8 +986,6 @@ class SyllabeInitiale:
             elif syllabes[0][-1] == 'C':
                 if syllabes[0][-2] == 'N':
                     changements.append('nc')
-                elif len(syllabes) > 1 and syllabes[0][-2] == 'Ǫ' and syllabes[1][0] == 'D':
-                    changements.append('s')
                 elif len(syllabes) == 1:
                     if syllabes[0][-2] in ['Í', 'Ǫ']:
                         changements.append('')
@@ -1021,8 +1008,11 @@ class SyllabeInitiale:
 
             #Gestion de F
             elif syllabes[0][-1] == 'F':
-                #Assimilation à la consonne suivante
-                changements.append('')
+                if len(syllabes) > 1 and syllabes[0][-2] == 'Ọ' and syllabes[1][0] + syllabes[1][1] == 'FR':
+                    changements.append('f')
+                else:
+                    #Assimilation à la consonne suivante
+                    changements.append('')
 
             #Gestion de G
             elif syllabes[0][-1] == 'G':
@@ -1074,7 +1064,7 @@ class SyllabeInitiale:
             #Gestion de M
             elif syllabes[0][-1] == 'M':
                 if len(syllabes) > 1 and syllabes[1][0] in ['B', 'C', 'T', 'Y']:
-                    if syllabes[0][-2] == 'Í' and syllabes[-1] == 'YU':
+                    if syllabes[0][-2] == 'Í' and syllabes[1] == syllabes[-1] == 'YU':
                         changements.append('ng')
                     else:
                         changements.append('n')
@@ -1111,8 +1101,14 @@ class SyllabeInitiale:
 
             #Gestion de P
             elif syllabes[0][-1] == 'P':
+                #Si c'est un mot venant de l'adstrat grec
                 if len(syllabes) > 1 and syllabes[1][0] == 'H':
                     changements.append('p')
+                elif len(syllabes) > 1 and syllabes[1][0] == 'P':
+                    if len(syllabes) > 1 and syllabes[0][-2] == 'A' and syllabes[1][1] == 'Ę':
+                        changements.append('p')
+                    else:
+                        changements.append('')
                 else:
                 #Assimilation à la consonne suivante
                     changements.append('')
@@ -1121,9 +1117,9 @@ class SyllabeInitiale:
             elif syllabes[0][-1] == 'Q':
                 if len(syllabes) > 1:
                     if syllabes[1][0] == 'W':
-                        if syllabes[0][-2] in ['A', 'Ę'] and syllabes[1][1] in ['A', 'R']:
+                        if syllabes[0][-2] in ['A', 'Ę', 'Í'] and syllabes[1][1] in ['A', 'R']:
                             changements.append('v')
-                        elif syllabes[0][-2] == 'E' and syllabes[1][1] == 'Ę':
+                        elif syllabes[0][-2] in ['E', 'Í'] and syllabes[1][1] in ['Ę', 'U']:
                             changements.append('')
                         else:
                             changements.append('u')
@@ -1135,7 +1131,7 @@ class SyllabeInitiale:
             #Gestion de R
             elif syllabes[0][-1] == 'R':
                 if len(syllabes) > 1 and syllabes[1][0] == 'R':
-                    if syllabes[0][-2] == 'E' and syllabes[1][1] == 'A':
+                    if syllabes[0][-2] in ['E', 'Ę', 'O'] and syllabes[1][1] in ['A', 'Ọ']:
                         changements.append('r')
                     else:
                         changements.append('')
@@ -1154,7 +1150,7 @@ class SyllabeInitiale:
                     else:
                         changements.append(syllabes[0][-2] + 's')
                 elif len(syllabes) > 1 and syllabes[1][0] == 'S':
-                    if syllabes[0][-2] in ['A', 'E', 'Ǫ', 'U'] and syllabes[1][1] in ['A', 'Á', 'Ę', 'Í', 'Y']:
+                    if syllabes[0][-2] in ['A', 'E', 'Ẹ', 'Ǫ', 'U'] and syllabes[1][1] in ['A', 'Á', 'Ę', 'Í', 'Y']:
                         changements.append('s')
                     else:
                         changements.append('')

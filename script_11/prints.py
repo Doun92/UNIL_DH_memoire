@@ -1384,7 +1384,7 @@ Moine endormi
 # print(EvolutionPhonetique.evolution_phonetique("ESTĘT")) # estoit
 # print(EvolutionPhonetique.evolution_phonetique("ESVẸGLATS")) # esveillez
 # print(EvolutionPhonetique.evolution_phonetique("ET")) # et
-# print(EvolutionPhonetique.evolution_phonetique("OCLOS")) # euz
+# print(EvolutionPhonetique.evolution_phonetique("OCLÚS")) # euz
 # print(EvolutionPhonetique.evolution_phonetique("EPẸSCPOS")) # evesques
 # print(EvolutionPhonetique.evolution_phonetique("EPẸSCPU")) # evesquë
 # print(EvolutionPhonetique.evolution_phonetique("FÁCRE")) # faire
@@ -1413,7 +1413,7 @@ Moine endormi
 # print(EvolutionPhonetique.evolution_phonetique("LAUDARĘT")) # loerai
 # print(EvolutionPhonetique.evolution_phonetique("LAUDAS")) # loes
 # print(EvolutionPhonetique.evolution_phonetique("LUÍ")) # lui
-# print(EvolutionPhonetique.evolution_phonetique("MERCẸYDE")) # marcis
+# print(EvolutionPhonetique.evolution_phonetique("MERCẸYDES")) # marcis
 # print(EvolutionPhonetique.evolution_phonetique("MARÍA")) # marie
 # print(EvolutionPhonetique.evolution_phonetique("MATTÍNAS")) # matines
 # print(EvolutionPhonetique.evolution_phonetique("MEYLYỌRA")) # meillura
@@ -1434,7 +1434,7 @@ Moine endormi
 # print(EvolutionPhonetique.evolution_phonetique("NOSTRO")) # nostron
 # print(EvolutionPhonetique.evolution_phonetique("NǪCTE")) # nuit
 # print(EvolutionPhonetique.evolution_phonetique("NỌMME")) # num
-# print(EvolutionPhonetique.evolution_phonetique("ÁUNT")) # ont
+# print(EvolutionPhonetique.evolution_phonetique("ONT")) # ont
 # print(EvolutionPhonetique.evolution_phonetique("ORGANU")) # orgen
 # print(EvolutionPhonetique.evolution_phonetique("AUT")) # ot
 # print(EvolutionPhonetique.evolution_phonetique("AUDÍ")) # oï
@@ -1449,7 +1449,7 @@ Moine endormi
 # print(EvolutionPhonetique.evolution_phonetique("PROPHĘTTA")) # prophete
 # print(EvolutionPhonetique.evolution_phonetique("PǪYS")) # puis
 # print(EvolutionPhonetique.evolution_phonetique("PURA")) # pure
-# print(EvolutionPhonetique.evolution_phonetique("QWÁNTU")) # quant
+# print(EvolutionPhonetique.evolution_phonetique("QWANTU")) # quant
 # print(EvolutionPhonetique.evolution_phonetique("CANTÍQWOS")) # quantiques
 # print(EvolutionPhonetique.evolution_phonetique("QWAR")) # quar
 # print(EvolutionPhonetique.evolution_phonetique("QWE")) # quë
@@ -1476,7 +1476,7 @@ Moine endormi
 # print(EvolutionPhonetique.evolution_phonetique("SON")) # son
 # print(EvolutionPhonetique.evolution_phonetique("SONATS")) # sonez
 # print(EvolutionPhonetique.evolution_phonetique("SOPLÍĘT")) # soplioit
-# print(EvolutionPhonetique.evolution_phonetique("SỌBẸNDE")) # sovent
+# print(EvolutionPhonetique.evolution_phonetique("SOBẸNDE")) # sovent
 # print(EvolutionPhonetique.evolution_phonetique("TANTỌST")) # tantost
 # print(EvolutionPhonetique.evolution_phonetique("TE")) # te
 # print(EvolutionPhonetique.evolution_phonetique("TON")) # ton
@@ -1525,7 +1525,7 @@ Eveque Boniface
 # print(EvolutionPhonetique.evolution_phonetique("ALMỌNAS")) # aumones
 # print(EvolutionPhonetique.evolution_phonetique("ALTRA")) # autre
 # print(EvolutionPhonetique.evolution_phonetique("AVÁRÍTYA")) # avarice
-# print(EvolutionPhonetique.evolution_phonetique("ABÍT")) # avit
+# print(EvolutionPhonetique.evolution_phonetique("ABĘT")) # avit
 # print(EvolutionPhonetique.evolution_phonetique("ABĘT")) # avoi
 # print(EvolutionPhonetique.evolution_phonetique("ABẸRE")) # avoir
 # print(EvolutionPhonetique.evolution_phonetique("ABĘT")) # avoit
@@ -1533,7 +1533,7 @@ Eveque Boniface
 # print(EvolutionPhonetique.evolution_phonetique("BĘNE")) # bien
 # print(EvolutionPhonetique.evolution_phonetique("BRÁCYOS")) # braz
 # print(EvolutionPhonetique.evolution_phonetique("BRISÁTA")) # briseë
-# print(EvolutionPhonetique.evolution_phonetique("BRISÁ")) # brisë
+# print(EvolutionPhonetique.evolution_phonetique("BRISA")) # brisë
 # print(EvolutionPhonetique.evolution_phonetique("QWASSA")) # casse
 # print(EvolutionPhonetique.evolution_phonetique("CE")) # ce
 # print(EvolutionPhonetique.evolution_phonetique("CENTU")) # cen
@@ -1604,8 +1604,8 @@ Eveque Boniface
 # print(EvolutionPhonetique.evolution_phonetique("GRÁNDU")) # grant
 # print(EvolutionPhonetique.evolution_phonetique("GREGGỌRYUS")) # gregoires
 # print(EvolutionPhonetique.evolution_phonetique("GRÁTU")) # gré
-# print(EvolutionPhonetique.evolution_phonetique("HAT")) # ha
-# print(EvolutionPhonetique.evolution_phonetique("ǪMO")) # home
+# print(EvolutionPhonetique.evolution_phonetique("HHAT")) # ha
+# print(EvolutionPhonetique.evolution_phonetique("HHǪMO")) # home
 # print(EvolutionPhonetique.evolution_phonetique("CẸSTA")) # iceste
 # print(EvolutionPhonetique.evolution_phonetique("ILE")) # il
 # print(EvolutionPhonetique.evolution_phonetique("IRA")) # irë
@@ -1688,8 +1688,8 @@ Eveque Boniface
 # print(EvolutionPhonetique.evolution_phonetique("SỌAS")) # soies
 # print(EvolutionPhonetique.evolution_phonetique("SON")) # son
 # print(EvolutionPhonetique.evolution_phonetique("SORA PỌSYA")) # sorepoia
-# print(EvolutionPhonetique.evolution_phonetique("SỌBTUS")) # soz
-# print(EvolutionPhonetique.evolution_phonetique("SỌBVẸNIT")) # sovint
+# print(EvolutionPhonetique.evolution_phonetique("SOBTUS")) # soz
+# print(EvolutionPhonetique.evolution_phonetique("SOBVẸNIT")) # sovint
 # print(EvolutionPhonetique.evolution_phonetique("TANTỌST")) # tantost
 # print(EvolutionPhonetique.evolution_phonetique("TERRA")) # terre
 # print(EvolutionPhonetique.evolution_phonetique("TẸ")) # toi
@@ -1703,7 +1703,7 @@ Eveque Boniface
 # print(EvolutionPhonetique.evolution_phonetique("TỌTTU")) # tuit
 # print(EvolutionPhonetique.evolution_phonetique("UNU")) # un
 # print(EvolutionPhonetique.evolution_phonetique("UNUS")) # uns
-# print(EvolutionPhonetique.evolution_phonetique("VAD")) # va
+# print(EvolutionPhonetique.evolution_phonetique("VADE")) # va
 # print(EvolutionPhonetique.evolution_phonetique("VENDÚTU")) # vendu
 # print(EvolutionPhonetique.evolution_phonetique("VENÚTS")) # venuz
 # print(EvolutionPhonetique.evolution_phonetique("VERÍTA")) # verité
@@ -1878,7 +1878,7 @@ Enfant ressuscité
 """
 Marchand jureur
 """
-# print(EvolutionPhonetique.evolution_phonetique("HAT")) # ha
+# print(EvolutionPhonetique.evolution_phonetique("HHAT")) # ha
 # print(EvolutionPhonetique.evolution_phonetique("ACCAPTĘT")) # achatoit
 # print(EvolutionPhonetique.evolution_phonetique("ALLĘT")) # alloit
 # print(EvolutionPhonetique.evolution_phonetique("AMĘN")) # amen
@@ -1914,7 +1914,7 @@ Marchand jureur
 # print(EvolutionPhonetique.evolution_phonetique("WAÁÍDN")) # gaaing
 # print(EvolutionPhonetique.evolution_phonetique("YẸCTA")) # gité
 # print(EvolutionPhonetique.evolution_phonetique("GRAVĘUNT")) # grevoient
-# print(EvolutionPhonetique.evolution_phonetique("ǪMO")) # hom
+# print(EvolutionPhonetique.evolution_phonetique("HHǪMO")) # hom
 # print(EvolutionPhonetique.evolution_phonetique("HHONỌRÁRE")) # honorer
 # print(EvolutionPhonetique.evolution_phonetique("EXÍT")) # issi
 # print(EvolutionPhonetique.evolution_phonetique("JADDÍES")) # jadis
@@ -1951,7 +1951,7 @@ Marchand jureur
 # print(EvolutionPhonetique.evolution_phonetique("SẸNE")) # senz
 # print(EvolutionPhonetique.evolution_phonetique("SEPALÍRE")) # sevelir
 # print(EvolutionPhonetique.evolution_phonetique("SỌFFRĘT")) # soffroit
-# print(EvolutionPhonetique.evolution_phonetique("SỌBẸNDE")) # sovent
+# print(EvolutionPhonetique.evolution_phonetique("SOBẸNDE")) # sovent
 # print(EvolutionPhonetique.evolution_phonetique("TANTỌST")) # tantost
 # print(EvolutionPhonetique.evolution_phonetique("TENDÍT")) # tendit
 # print(EvolutionPhonetique.evolution_phonetique("TERRÁWTS")) # terrauz

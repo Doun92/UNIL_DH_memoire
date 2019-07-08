@@ -76,7 +76,9 @@ class SyllabeFinale:
                     #Consonantisme explosif complexe
                     #En position initiale, tout élément consonantique complexe constitué d'une consonne et d'une liquide demeure intact
                     #Cette séquence se maintient en milieu intervocalique
-                    if syllabes[-1][1] == 'L':
+                    if syllabes[-1][1] == 'C':
+                        changements.append('g')
+                    elif syllabes[-1][1] == 'L':
                         changements.append('bl')
                     elif syllabes[-1][1] == 'R':
                         #En milieu intervocalique
@@ -91,7 +93,7 @@ class SyllabeFinale:
                         #En milieu intervocalique
                         if syllabes[-2][-1] in listes_lettres['toutes_les_voyelles']:
                             #En milieu palatal
-                            if syllabes[-2][-1] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'Í', 'O', 'Ǫ', 'Ọ'] and syllabes[-1][2] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'O', 'Ǫ', 'U', 'Ú']:
+                            if syllabes[-2][-1] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'Í', 'O', 'Ọ'] and syllabes[-1][2] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'Í', 'I', 'O', 'Ǫ', 'U', 'Ú']:
                                 #Position finale
                                 if syllabes[-1][2] in ['I', 'O', 'E']:
                                     if syllabes[-1][2] == 'O' and syllabes[-1][2] == syllabes[-1][-1]:
@@ -106,10 +108,10 @@ class SyllabeFinale:
                                 else:
                                     changements.append('g')
                             #En milieu palatal, mais avec une graphie différente
-                            elif syllabes[-2][-1] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'Í' 'O', 'Ǫ', 'Ọ'] and syllabes[-1][2] in ['Ǫ']:
+                            elif syllabes[-2][-1] in ['A'] and syllabes[-1][2] in ['Ǫ']:
                                 changements.append('j')
                             #En milieu vélaire
-                            elif syllabes[-2][-1] in ['Ọ', 'Ú'] and syllabes[-1][2] in ['A', 'E', 'U']:
+                            elif syllabes[-2][-1] in ['Ǫ', 'Ú'] and syllabes[-1][2] in ['A', 'Á', 'E', 'Ẹ', 'I', 'O', 'U']:
                                 changements.append('')
                         #En milieu explosif
                         else:
@@ -119,12 +121,14 @@ class SyllabeFinale:
                         #Amuïssement, non sans avoir provoqué un arrondissement de la voyelle tonique qui suit ou qui précède
                         if syllabes[-2][-1] in listes_lettres['toutes_les_voyelles']:
                             changements.append('')
+                    else:
+                        changements.append(syllabes[-1][1])
                 #Consonantisme simple
                 else:
                     #En milieu intervocalique
                     if syllabes[-2][-1] in listes_lettres['toutes_les_voyelles']:
                         #En milieu palatal
-                        if syllabes[-2][-1] in ['A', 'Á', 'Ẹ', 'Ę', 'Í' 'O', 'Ǫ', 'Ọ'] and syllabes[-1][1] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'O', 'Ǫ', 'U', 'Ú']:
+                        if syllabes[-2][-1] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'Í', 'O', 'Ọ'] and syllabes[-1][1] in ['A', 'Á', 'E', 'Ẹ', 'Ę', 'Í', 'I', 'O', 'Ǫ', 'U', 'Ú']:
                             #Cas particulier
                             if syllabes[-2][-1] == syllabes[0][-1] and syllabes[-2][-1] == 'A' and syllabes[-1][1] == 'Ú':
                                 changements.append('')
@@ -160,6 +164,8 @@ class SyllabeFinale:
                                     changements.append('cl')
                                 else:
                                     changements.append('l')
+                            elif syllabes[-2][-1] == 'O' and syllabes[-1][2] == 'Ú':
+                                changements.append('')
                             elif syllabes[-2][-1] == 'Í':
                                 changements.append('l')
                             elif syllabes[-2][-1] == 'E' and syllabes[-1][2] == 'U':
@@ -224,6 +230,8 @@ class SyllabeFinale:
                                 changements.append('qu')
                             else:
                                 changements.append('c')
+                    else:
+                        changements.append(syllabes[-1][1])
                 #Consonantisme simple
                 else:
                     #En milieu intervocalique
@@ -294,7 +302,10 @@ class SyllabeFinale:
                     if syllabes[-1][1] == 'B':
                         changements.append('b')
                     elif syllabes[-1][1] == 'C':
-                        changements.append('z')
+                        if syllabes[-1][2] == 'A':
+                            changements.append('g')
+                        else:
+                            changements.append('z')
                     elif syllabes[-1][1] == 'L':
                         changements.append('l')
                     elif syllabes[-1][1] == 'N':
@@ -333,7 +344,7 @@ class SyllabeFinale:
                             changements.append('d')
                         else:
                             changements.append('')
-                    elif syllabes[-2][-1] == 'Y' and syllabes[-1][1] == syllabes[-1][-1] == 'E':
+                    elif syllabes[-2][-1] == 'Y' and (syllabes[-1][1] == syllabes[-1][-1] == 'E') or (len(syllabes[-1]) > 2 and syllabes[-1][1] == 'E' and syllabes[-1][2] == syllabes[-1][-1] == 'S'):
                         changements.append('')
                     elif syllabes[-2][-1] in ['G', 'P']:
                         changements.append('d')
@@ -363,8 +374,8 @@ class SyllabeFinale:
                             changements.append('l')
                         else:
                             changements.append('fl')
-                    elif syllabes[-1][1] == 'R':
-                        changements.append('fr')
+                    else:
+                        changements.append(syllabes[-1][0] + syllabes[-1][1])
                 #Consonantisme simple
                 else:
                     #En milieu intervocalique
@@ -428,8 +439,6 @@ class SyllabeFinale:
                                     changements.append('dr')
                             else:
                                 changements.append('gr')
-                    elif syllabes[-1][1] == 'T':
-                        changements.append('t')
                     elif syllabes[-1][1] == 'Y':
                         #En milieu intervocalique
                         if syllabes[-2][-1] in listes_lettres['toutes_les_voyelles']:
@@ -448,6 +457,8 @@ class SyllabeFinale:
                                 changements.append('gu')
                             else:
                                 changements.append('g')
+                    else:
+                        changements.append(syllabes[-1][0])
                 else:
                     #En milieu intervocalique
                     if syllabes[-2][-1] in listes_lettres['toutes_les_voyelles']:
@@ -455,9 +466,9 @@ class SyllabeFinale:
                             changements.append('')
                         elif syllabes[-2][-1] in ['A', 'Á', 'I', 'Í', 'E', 'Ẹ', 'Ę'] and syllabes[-1][1] in ['A', 'Á']:
                             changements.append('i')
-                        elif syllabes[-2][1] in ["O", "Ǫ", "Ọ",] and syllabes[-1][1] in ['A', 'Á']:
+                        elif syllabes[-2][-1] in ["O", "Ǫ", "Ọ",] and syllabes[-1][1] in ['A', 'Á']:
                             changements.append('v')
-                        elif syllabes[-2][1] in ["Ú", 'U'] and syllabes[-1][1] in ['A', 'Á']:
+                        elif syllabes[-2][-1] in ["Ú", 'U'] and syllabes[-1][1] in ['A', 'Á']:
                             changements.append('')
                         elif syllabes[-1][1] in ["O", "Ǫ", "Ọ", "Ú", 'U']:
                             if syllabes[-2][-1] in ['I', 'Í']:
@@ -473,6 +484,11 @@ class SyllabeFinale:
                             changements.append('g')
                     elif syllabes[-1][1] in ['I', 'O', 'U', 'E']:
                         changements.append('c')
+                    elif syllabes[-2][-1] == 'N':
+                        if syllabes[-2][-2] == 'A':
+                            changements.append('g')
+                        else:
+                            changements.append('dr')
                     else:
                         changements.append(syllabes[-1][0])
 
@@ -545,7 +561,7 @@ class SyllabeFinale:
                 else:
                     #Position finale
                     if syllabes[-1][1] in ['I', 'U', 'E']:
-                        if syllabes[-2][-1] in ['D', 'M', 'X']:
+                        if syllabes[-2][-1] in ['D', 'M', 'O', 'X']:
                             changements.append('m')
                         elif len(syllabes[-2]) > 1 and syllabes[-2][-2] + syllabes[-2][-1] == 'GY':
                             changements.append('m')
@@ -1000,7 +1016,7 @@ class SyllabeFinale:
                     changements.append('')
             #Si I se trouve en position pénultième
             elif syllabes[-1][-2] == 'I':
-                if syllabes[-1][-3] == 'T' and syllabes[-1][-1] == 'S':
+                if len(syllabes) > 2 and syllabes[-1][-3] == 'T' and syllabes[-1][-1] == 'S':
                     changements.append('e')
                 else:
                     changements.append('')
@@ -1025,10 +1041,12 @@ class SyllabeFinale:
                 if len(syllabes[-1]) > 2 and syllabes[-1][0] + syllabes[-1][1] in listes_lettres['consonantisme_explosif_complexe_2_lettres']:
                     if syllabes[-1][0] + syllabes[-1][1] in ['GY', 'CY', 'RY']:
                         changements.append('')
+                    elif syllabes[-1][0] + syllabes[-1][1] == 'TY':
+                        changements.append('on')
                     else:
                         changements.append('e')
                 #E d'appui pour d'autres séquences
-                elif syllabes[-2][-1] == 'S' and syllabes[-1][0] == 'L':
+                elif syllabes[-2][-1] + syllabes[-1][0] in ['SL', 'YT']:
                     changements.append('e')
                 else:
                     changements.append('')
@@ -1042,6 +1060,8 @@ class SyllabeFinale:
                             changements.append('')
                         else:
                             changements.append('e')
+                    elif syllabes[-2][-1] + syllabes[-1][0] == 'QW':
+                        changements.append('e')
                     else:
                         changements.append('')
                 else:
@@ -1068,7 +1088,7 @@ class SyllabeFinale:
                     if syllabes[-1][0] + syllabes[-1][1] in ['CT', 'DY', 'GY',  'LY', 'TY', 'TL', 'RD']:
                         changements.append('')
                     elif syllabes[-1][0] + syllabes[-1][1] in ['CY', 'RY']:
-                        if syllabes[-2][-1] in ['B', 'R', 'T']:
+                        if syllabes[-2][-1] in ['B', 'Ọ', 'R', 'T']:
                             changements.append('e')
                         else:
                             changements.append('')
@@ -1101,8 +1121,13 @@ class SyllabeFinale:
                 if syllabes[-1][-1] == 'S':
                     #La plupart des groupes consonantiques ont besoin d'un e d'appui à la fin
                     if len(syllabes[-1]) > 2 and syllabes[-1][0] + syllabes[-1][1] in listes_lettres['consonantisme_explosif_complexe_2_lettres']:
-                        if syllabes[-1][0] + syllabes[-1][1] in ['CT', 'DY', 'GY',  'LY', 'TY', 'TL', 'RD', 'RY']:
+                        if syllabes[-1][0] + syllabes[-1][1] in ['CT', 'DY', 'GY',  'LY', 'TY', 'TL', 'RD']:
                             changements.append('')
+                        elif syllabes[-1][0] + syllabes[-1][1] == 'RY':
+                            if syllabes[-2][-1] == 'Ọ':
+                                changements.append('e')
+                            else:
+                                changements.append('')
                         else:
                             changements.append('e')
                     else:
@@ -1394,7 +1419,12 @@ class SyllabeFinale:
             #Gestion de S
             elif syllabes[-1][-1] == 'S':
                 if syllabes[-1][-2] in ['E', 'U', 'O'] and len(syllabes[-1]) > 2 and syllabes[-1][-3] in ['C', 'D', 'T']:
-                    changements.append('z')
+                    if syllabes[-2][-1] in ['Ẹ', 'Í', 'Y']:
+                        changements.append('s')
+                    elif len(syllabes[-1]) > 3 and syllabes[-1][-4] == 'Y':
+                        changements.append('s')
+                    else:
+                        changements.append('z')
                 elif syllabes[-1][-2] == 'R':
                     changements.append('rs')
                 elif syllabes[-1][-2] == 'N':
